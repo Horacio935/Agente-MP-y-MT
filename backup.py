@@ -238,9 +238,6 @@ def generar_tabla_verdad(formula, proposiciones):
     orden_final = variables + otras_ordenadas + [formula_final]
     df = df[orden_final]
 
-    # 🔄 Transformar True/False a V/F
-    df = df.replace({True: "V", False: "F"})
-
     return df
 
 
