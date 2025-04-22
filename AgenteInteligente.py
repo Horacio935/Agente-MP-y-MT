@@ -179,9 +179,6 @@ def generar_tabla_verdad(formula, proposiciones):
                 break
             subexpresiones.update(nuevos)
 
-        # Aquí NO modificamos expr para evitar el error de 'X'
-        # Solo seguimos buscando mientras haya nuevos niveles
-
         subexpresiones.add(expr.strip())  # Añade la fórmula completa también
         return list(subexpresiones)
 
@@ -238,7 +235,7 @@ def generar_tabla_verdad(formula, proposiciones):
     orden_final = variables + otras_ordenadas + [formula_final]
     df = df[orden_final]
 
-    # 🔄 Transformar True/False a V/F
+    # Transformar True/False a V/F
     df = df.replace({True: "V", False: "F"})
 
     return df
